@@ -3,7 +3,7 @@ import StyledLayout from './styled-components/StyledLayout';
 const Layout = ({ children }) => {
   return (
     <StyledLayout>
-      <Navbar />
+      <Navbar/>
       {children}
     </StyledLayout>
   );
