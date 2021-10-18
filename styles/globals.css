@@ -2,10 +2,22 @@
 
 html,
 body {
-  padding: 0;
   margin: 0;
+  padding: 0;
   font-family: 'Nunito Sans', sans-serif;
+  height: 100%;
+  /* position: absolute; */
 }
+
+
+/* html{
+  background-color: aliceblue;
+}
+
+body{
+  background: pink;
+} */
+
 
 a {
   color: inherit;
@@ -14,4 +26,25 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+input,
+select {
+  border: none;
+  font-family: 'Nunito Sans', sans-serif;
+  border-radius: 10px;
+}
+
+ul{
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

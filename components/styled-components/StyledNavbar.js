@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 const StyledNavbar = styled.nav`
-  ${'' /* width: 100%; */}
-  width: 100vw;
+  width: 100%;
   padding: 2rem;
   background: ${(props) => props.theme.element};
   display: flex;
