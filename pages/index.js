@@ -6,7 +6,6 @@ import { useState } from 'react';
 import { lightTheme, darkTheme, CountriesContext } from '../store';
 import MiniCard from '../components/MiniCard';
 
-
 export async function getStaticProps() {
   const response = await fetch('https://restcountries.com/v3.1/all');
   const countries = await response.json();
@@ -21,9 +20,17 @@ export async function getStaticProps() {
 
 export default function Home({ countries }) {
   const [currentTheme, setCurrentTheme] = useState('dark');
+  const [filteredCountries, setFilteredCountries] = useState(countries);
   return (
-    // <div className={styles.container}>
-    <CountriesContext.Provider value={{ currentTheme, setCurrentTheme }}>
+    <CountriesContext.Provider
+      value={{
+        currentTheme,
+        setCurrentTheme,
+        filteredCountries,
+        setFilteredCountries,
+        countries,
+      }}
+    >
       <ThemeProvider theme={currentTheme === 'dark' ? darkTheme : lightTheme}>
         <Layout>
           <Head>
@@ -32,10 +39,10 @@ export default function Home({ countries }) {
             <link rel='icon' href='/favicon.ico' />
           </Head>
           <Refine />
-          <div className="container">
+          <div className='container'>
             {/* country here... */}
             {/* <p>{(countries[0].name.common)}</p> */}
-            {countries.slice(0,20).map((country) => (
+            {filteredCountries.slice(0, 20).map((country) => (
               <MiniCard key={country.cca2} country={country} />
             ))}
           </div>
