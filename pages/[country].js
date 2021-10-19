@@ -21,7 +21,6 @@ const Country = () => {
   const ctx = useContext(CountriesContext);
   const [currentCountry, setCurrentCountry] = useState();
   const router = useRouter();
-  console.log(router.query)
 
   useEffect(() => {
     if (ctx.countries.length === 0){

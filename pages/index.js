@@ -2,7 +2,7 @@ import Layout from '../components/Layout';
 import Refine from '../components/Refine';
 import { CountriesContext } from '../store';
 import MiniCard from '../components/MiniCard';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, Fragment } from 'react';
 import Link from 'next/link';
 
 export async function getStaticProps() {
@@ -25,13 +25,13 @@ export default function Home({ countries }) {
       <Refine />
       <div className='container'>
         {ctx.filteredCountries.slice(0, 20).map((country) => (
-          <>
-            <Link href={`/${country.cca2}`} key={country.cca2}>
+          <Fragment key={country.cca2}>
+            <Link href={`/${country.cca2}`}>
               <span className="minicard-container">
-                <MiniCard key={country.cca2} country={country} />
+                <MiniCard country={country} />
               </span>
             </Link>
-          </>
+          </Fragment>
         ))}
       </div>
     </Layout>
