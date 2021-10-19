@@ -26,7 +26,7 @@ export default function Home({ countries }) {
       <div className='container'>
         {ctx.filteredCountries.slice(0, 20).map((country) => (
           <>
-            <Link href={`/${country.name.common}`}>
+            <Link href={`/${country.cca2}`} key={country.cca2}>
               <span className="minicard-container">
                 <MiniCard key={country.cca2} country={country} />
               </span>
