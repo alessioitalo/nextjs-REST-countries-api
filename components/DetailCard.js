@@ -9,7 +9,6 @@ const DetailCard = ({ country }) => {
 
   const nativeNameArray = Object.values(country.name.nativeName);
 
-
   return (
     <StyledDetailCard flag={country.flags.svg}>
       <span className='back'>
@@ -57,14 +56,16 @@ const DetailCard = ({ country }) => {
             </ul>
           </div>
           <div>
-            <span>
-              Border Countries:
-              {Object.values(country.borders).map((border) => (
-                <Link href={`/${border}`} key={border}>
-                  <span className="border">{` ${border} `}</span>
-                </Link>
-              ))}
-            </span>
+            {country.borders && (
+              <span>
+                Border Countries:
+                {Object.values(country.borders).map((border) => (
+                  <Link href={`/${border}`} key={border}>
+                    <span className='border'>{` ${border} `}</span>
+                  </Link>
+                ))}
+              </span>
+            )}
           </div>
         </div>
       </div>
