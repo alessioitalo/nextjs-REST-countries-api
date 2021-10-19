@@ -5,6 +5,12 @@ const StyledMiniCard = styled.div`
   margin: 2% 1%;
   width: 23%;
   height: 25rem;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.01)
+  }
+
   @media (max-width: 1000px) {
     width: 48%;
   }

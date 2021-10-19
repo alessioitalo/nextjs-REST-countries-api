@@ -1,8 +1,8 @@
 import StyledRefine from './styled-components/StyledRefine';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useContext } from 'react';
 import { CountriesContext } from '../store';
+import { Search } from 'react-ionicons';
+
 
 const Refine = () => {
   const ctx = useContext(CountriesContext);
@@ -20,13 +20,16 @@ const Refine = () => {
   };
   return (
     <StyledRefine>
-      <form className='search'>
-        {/* <label>< icon={faSearch} size="xs"/></label> */}
-        <input
+      {/* <form className='search'>
+        <Search /> */}
+        <div className='search'>
+        <Search color={ctx.currentTheme === 'dark' && 'hsl(0, 0%, 100%)'} />
+        <input 
           placeholder='Search for a country...'
           onChange={refineSearchHandler}
         ></input>
-      </form>
+        </div>
+      {/* </form> */}
       <form className='filter'>
         <select>
           {/* <option value="" disabled selected>Filter by region</option> */}
