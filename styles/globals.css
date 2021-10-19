@@ -10,7 +10,6 @@ body {
   /* position: absolute; */
 }
 
-
 /* html{
   background-color: aliceblue;
 }
@@ -18,7 +17,6 @@ body {
 body{
   background: pink;
 } */
-
 
 a {
   color: inherit;
@@ -36,18 +34,34 @@ select {
   border-radius: 10px;
 }
 
-ul{
+ul {
   padding: 0;
 }
 
-li{
+li {
   list-style: none;
 }
 
-.container{
+.container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 1rem;
   width: 100%;
+}
+
+.minicard-container {
+  width: 23%;
+  margin: 2% 1%;
+}
+
+@media (max-width: 1000px) {
+  .minicard-container {
+    width: 48%;
+  }
+}
+@media (max-width: 700px) {
+  .minicard-container {
+    width: 100%;
+  }
 }
