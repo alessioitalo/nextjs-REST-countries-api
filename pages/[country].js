@@ -28,7 +28,7 @@ const Country = () => {
       router.push('/');
     }
     setCurrentCountry(
-      ctx.countries.find((country) => country.cca2 === router.query.country)
+      ctx.countries.find((country) => country.cca3 === router.query.country)
     );
   });
 

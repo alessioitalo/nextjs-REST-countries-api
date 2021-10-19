@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const StyledNavbar = styled.nav`
   width: 100%;
-  padding: 2rem;
+  padding: 1rem 2rem;
   background: ${(props) => props.theme.element};
   display: flex;
   justify-content: space-between;
@@ -16,8 +16,14 @@ const StyledNavbar = styled.nav`
     width: 25%;
     cursor: pointer;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+
+    svg{
+      position: relative;
+      top: 2px;
+      margin-right: 10px;
+    }
   }
 
   p {

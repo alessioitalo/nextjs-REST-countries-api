@@ -1,34 +1,74 @@
 import StyledDetailCard from './styled-components/StyledDetailCard';
 import Link from 'next/link';
+import { ArrowBack } from 'react-ionicons';
+import { useContext } from 'react';
+import { CountriesContext } from '../store';
 
 const DetailCard = ({ country }) => {
-  console.log(country.name.nativeName);
+  const ctx = useContext(CountriesContext);
+
+  const nativeNameArray = Object.values(country.name.nativeName);
+
+
   return (
-      <StyledDetailCard flag={country.flags.svg}>
-      <span>
+    <StyledDetailCard flag={country.flags.svg}>
+      <span className='back'>
+        <ArrowBack color={ctx.currentTheme === 'dark' && 'hsl(0, 0%, 100%)'} />
         <Link href='/'>Back</Link>
       </span>
-      <div className="info">
-        <div className='flag' /> 
-        <div>
-          {country.name.common}
-          <ul>
-            {/* <li>Native Name: {Object.values(country.name.nativeName).map(lang=>` ${lang} `)}</li> */}
-            {/* <li>Native Name: {Object.values(country.name.nativeName.common)}</li> */}
-            <li>Population: {country.population}</li>
-            <li>Region: {country.region}</li>
-            <li>Subregion: {country.subregion}</li>
-            <li>Capital: {country.capital}</li>
-            <li>Top Level Domain: {country.tld}</li>
-            <li>Currency: {country.currency}</li>
-            <li>
-              Languages:{' '}
-              {Object.values(country.languages).map((lang) => ` ${lang} `)}
-            </li>
-          </ul>
+      <div className='info'>
+        <div className='flag' />
+        <div className='details'>
+          <span className='name'>{country.name.common}</span>
+          <div>
+            <ul>
+              {/* <li>Native Name: </li> */}
+              <li>
+                <span>Native Name</span>:{' '}
+                {nativeNameArray[nativeNameArray.length - 1].common}
+              </li>
+              <li>
+                <span>Population</span>: {country.population}
+              </li>
+              <li>
+                <span>Region</span>: {country.region}
+              </li>
+              <li>
+                <span>Subregion</span>: {country.subregion}
+              </li>
+              <li>
+                <span>Capital</span>: {country.capital}
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <span>Top Level Domain</span>: {country.tld}
+              </li>
+              <li>
+                <span>Currencies</span>:{' '}
+                {Object.values(country.currencies).map(
+                  (curr) => ` ${curr.name} `
+                )}
+              </li>
+              <li>
+                <span>Languages</span>:{' '}
+                {Object.values(country.languages).map((lang) => ` ${lang} `)}
+              </li>
+            </ul>
+          </div>
+          <div>
+            <span>
+              Border Countries:
+              {Object.values(country.borders).map((border) => (
+                <Link href={`/${border}`} key={border}>
+                  <span className="border">{` ${border} `}</span>
+                </Link>
+              ))}
+            </span>
+          </div>
         </div>
-        </div>
-      </StyledDetailCard>
+      </div>
+    </StyledDetailCard>
   );
 };
 

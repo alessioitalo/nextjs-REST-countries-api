@@ -35,10 +35,10 @@ li {
 
 .container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 1rem;
+  /* justify-content: stretch; */
+  padding: 2rem 1.5rem;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .minicard-container {

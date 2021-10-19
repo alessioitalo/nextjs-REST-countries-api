@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const StyledRefine = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 2rem;
   width: 100%;
 
   .search{
