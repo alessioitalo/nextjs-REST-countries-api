@@ -8,15 +8,35 @@ const StyledNavbar = styled.nav`
   justify-content: space-between;
   align-items: center;
 
-  div{
-      font-weight: 600;
+  div {
+    font-weight: 600;
   }
 
-  span{
+  .switcher {
     width: 25%;
     cursor: pointer;
     display: flex;
-    max-height: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p {
+    width: 100%;
+  }
+  @media (max-width: 1000px) {
+    font-size: 0.8rem;
+    padding: 1rem 0.5rem;
+    .switcher {
+      width: 50%;
+      justify-content: flex-end;
+      align-items: center;
+
+    }
+  }
+
+  @media (max-width: 700px) {
+    font-size: 0.6rem;
+
   }
 `;
 export default StyledNavbar;

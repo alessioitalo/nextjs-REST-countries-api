@@ -1,8 +1,7 @@
 import StyledNavbar from './styled-components/StyledNavbar';
 import { useContext } from 'react';
 import { CountriesContext } from '../store';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import { Moon, Sunny } from 'react-ionicons';
 
 const Navbar = () => {
   const ctx = useContext(CountriesContext);
@@ -18,11 +17,20 @@ const Navbar = () => {
   return (
     <StyledNavbar>
       <div>Where in the world?</div>
-      <span onClick={themeSwitcher}>
-        {ctx.currentTheme === 'light' && <FontAwesomeIcon icon={faMoon} />}
-        {ctx.currentTheme === 'dark' && <FontAwesomeIcon icon={faSun} />}
-        {ctx.currentTheme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-      </span>
+      <div onClick={themeSwitcher} className='switcher'>
+        {ctx.currentTheme === 'dark' && (
+          <>
+            <Sunny color={'hsl(0, 0%, 100%)'} />
+            <span>Light Theme</span>
+          </>
+        )}
+        {ctx.currentTheme === 'light' && (
+          <>
+            <Moon />
+            <span>Dark Theme</span>
+          </>
+        )}
+      </div>
     </StyledNavbar>
   );
 };
