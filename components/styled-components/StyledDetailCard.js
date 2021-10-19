@@ -23,6 +23,10 @@ const StyledDetailCard = styled.div`
     cursor: pointer;
     display: flex;
     justify-content: center;
+
+    &:hover, &:active{
+      transform: scale(1.05)
+    }
   }
 
   svg {
