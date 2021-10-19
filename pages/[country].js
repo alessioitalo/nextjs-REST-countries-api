@@ -2,6 +2,7 @@ import Layout from '../components/Layout';
 import { useContext, useState, useEffect } from 'react';
 import { CountriesContext } from '../store';
 import { useRouter } from 'next/router';
+import DetailCard from '../components/DetailCard';
 
 // export async function getStaticProps(context) {
 //   const country = context.params.country;
@@ -23,19 +24,16 @@ const Country = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (ctx.countries.length === 0){
-      router.push('/')
+    if (ctx.countries.length === 0) {
+      router.push('/');
     }
-    setCurrentCountry(ctx.countries.find((country) => country.cca2 === router.query.country));
+    setCurrentCountry(
+      ctx.countries.find((country) => country.cca2 === router.query.country)
+    );
   });
 
-  
-
   return (
-    <Layout>
-      <h1>this is a country page</h1>
-      {currentCountry && <p>{currentCountry.name.common}</p>}
-    </Layout>
+    <Layout>{currentCountry && <DetailCard country={currentCountry} />}</Layout>
   );
 };
 
