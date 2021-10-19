@@ -16,7 +16,7 @@ const DetailCard = ({ country }) => {
         <Link href='/'>Back</Link>
       </span>
       <div className='info'>
-        <div className='flag' />
+        <div className='flag'></div>
         <div className='details'>
           <span className='name'>{country.name.common}</span>
           <div>

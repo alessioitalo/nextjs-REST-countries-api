@@ -21,12 +21,14 @@ const StyledDetailCard = styled.div`
     padding: 0.5rem 1.5rem;
     background: ${(props) => props.theme.element};
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+  }
 
-    svg {
+  svg {
       position: relative;
-      top: 4px;
+      top: 2px;
       margin-right: 10px;
-    }
   }
 
   .info {
@@ -53,7 +55,7 @@ const StyledDetailCard = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 45%;
+    width: 50%;
   }
 
   span {
@@ -62,11 +64,44 @@ const StyledDetailCard = styled.div`
 
   .border{
     font-weight: 400;
-    background: ${props=>props.theme.element};
+    background: ${(props) => props.theme.element};
     padding: 0 1rem;
     margin: 0 0.5rem;
     cursor: pointer;
   }
+
+  @media(max-width:1000px){
+    font-size: 0.8rem;
+
+    .info{
+      flex-direction: column;
+    }
+
+    .back{
+      margin: 1rem 0;
+      font-size: 0.8rem;
+      padding: 0.5rem;
+    }
+
+
+    .flag, .details{
+      margin: 1rem 0;
+      width: 100%;
+
+    }
+
+    .flag{
+      min-height: 40vh;
+    }
+    
+    .details div{
+      flex-direction: column;
+  }
+  
+  svg{
+    top: 0;
+  }
+
 `;
 
 export default StyledDetailCard;

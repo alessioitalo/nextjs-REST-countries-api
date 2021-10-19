@@ -19,7 +19,7 @@ const StyledNavbar = styled.nav`
     justify-content: flex-end;
     align-items: center;
 
-    svg{
+    svg {
       position: relative;
       top: 2px;
       margin-right: 10px;
@@ -36,13 +36,15 @@ const StyledNavbar = styled.nav`
       width: 50%;
       justify-content: flex-end;
       align-items: center;
+    }
 
+    svg {
+      top: 0;
     }
   }
 
   @media (max-width: 700px) {
     font-size: 0.6rem;
-
   }
 `;
 export default StyledNavbar;
