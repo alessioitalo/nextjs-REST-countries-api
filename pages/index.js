@@ -6,9 +6,9 @@ import { useState } from 'react';
 import { lightTheme, darkTheme, CountriesContext } from '../store';
 import MiniCard from '../components/MiniCard';
 
+
 export async function getStaticProps() {
   const response = await fetch('https://restcountries.com/v3.1/all');
-  console.log(response);
   const countries = await response.json();
   // const countries = Object.keys(data).map(key=>{
   //   return data[key]
@@ -35,7 +35,7 @@ export default function Home({ countries }) {
           <div className="container">
             {/* country here... */}
             {/* <p>{(countries[0].name.common)}</p> */}
-            {countries.slice(1,20).map((country) => (
+            {countries.slice(0,20).map((country) => (
               <MiniCard key={country.cca2} country={country} />
             ))}
           </div>

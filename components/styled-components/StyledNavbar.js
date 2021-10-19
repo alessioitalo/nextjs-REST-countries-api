@@ -6,13 +6,17 @@ const StyledNavbar = styled.nav`
   background: ${(props) => props.theme.element};
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   div{
       font-weight: 600;
   }
 
   span{
+    width: 25%;
     cursor: pointer;
+    display: flex;
+    max-height: 2rem;
   }
 `;
 export default StyledNavbar;

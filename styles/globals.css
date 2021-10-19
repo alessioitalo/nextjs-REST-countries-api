@@ -6,6 +6,7 @@ body {
   padding: 0;
   font-family: 'Nunito Sans', sans-serif;
   height: 100%;
+  font-size: 20px;
   /* position: absolute; */
 }
 
@@ -47,4 +48,5 @@ li{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 1rem;
 }
