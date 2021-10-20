@@ -21,7 +21,6 @@ const DetailCard = ({ country }) => {
           <span className='name'>{country.name.common}</span>
           <div>
             <ul>
-              {/* <li>Native Name: </li> */}
               <li>
                 <span>Native Name</span>:{' '}
                 {nativeNameArray[nativeNameArray.length - 1].common}

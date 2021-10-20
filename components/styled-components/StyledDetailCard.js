@@ -91,7 +91,7 @@ const StyledDetailCard = styled.div`
     }
 
     .flag{
-      min-height: 40vh;
+      min-height: 50vw;
     }
     
     .details div{

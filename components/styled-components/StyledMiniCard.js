@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
-const StyledMiniCard = styled.div.attrs(props=> ({
-  background: props.theme.background
+const StyledMiniCard = styled.div.attrs((props) => ({
+  background: `${props.theme.background}`
 }))`
   width: 100%;
   height: 25rem;
   cursor: pointer;
 
   &:hover {
-    transform: scale(1.01)
+    transform: scale(1.01);
   }
 
   div:nth-of-type(2) {
@@ -31,6 +31,10 @@ const StyledMiniCard = styled.div.attrs(props=> ({
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    @media (max-width: 700px) {
+      height: 50vw;
+    }
   }
 `;
 
