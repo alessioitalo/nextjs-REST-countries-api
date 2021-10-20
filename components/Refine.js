@@ -23,11 +23,11 @@ const Refine = () => {
         <div className='search'>
         <Search color={ctx.currentTheme === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'} />
         <input 
-          placeholder='Search for a country...'
+        placeholder="Search for a country..."
           onChange={refineSearchHandler}
         ></input>
         </div>
-      <form className='filter'>
+      {/* <form className='filter'>
         <select>
           <option>Africa</option>
           <option>America</option>
@@ -35,7 +35,7 @@ const Refine = () => {
           <option>Europe</option>
           <option>Oceania</option>
         </select>
-      </form>
+      </form> */}
     </StyledRefine>
   );
 };

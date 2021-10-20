@@ -6,32 +6,36 @@ const StyledRefine = styled.div`
   padding: 2rem;
   width: 100%;
 
-  .search{
-      width: 40%;
-  }
-  .filter{
-      width: 20%;
-  }
-  input,
-  input::placeholder,
-  select {
-    background: ${(props) => props.theme.element};
-    color: ${(props) => props.theme.text};
+  .search {
+    width: 40%;
+    display: flex;
     padding: 1rem;
+    align-items: center;
+    border-radius: 10px;
+    background: ${(props) => props.theme.element};
+  }
+
+  input {
+    background: ${(props) => props.theme.element};
     width: 100%;
+    outline: none;
+    border: none;
+    height: 100%;
+    padding: 0 1rem;
+    color: ${(props) => props.theme.text};
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.8rem;
   }
 
-  @media(max-width: 600px){
-    flex-direction: column;
-    height: 25%;
+  .filter {
+    width: 20%;
+  }
 
-    .search{
-        width: 100%;
-    }
-    .filter{
-        width: 60%;
+  @media (max-width: 1000px) {
+    .search {
+      width: 100%;
     }
   }
-  
 `;
+
 export default StyledRefine;

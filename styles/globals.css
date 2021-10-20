@@ -19,12 +19,18 @@ a {
   box-sizing: border-box;
 }
 
+/* 
 input,
 select {
   border: none;
+  outline: none;
   font-family: 'Nunito Sans', sans-serif;
   border-radius: 10px;
-}
+} */
+
+/* input:focus{
+  /* border: none; */
+  /* outline: none; */
 
 ul {
   padding: 0;
@@ -36,14 +42,17 @@ li {
 
 .container {
   display: flex;
+  justify-content: center;
   padding: 2rem 1.5rem;
   width: 100%;
+  min-width: 90vw;
   flex-wrap: wrap;
+  overflow: hidden;
 }
 
 .minicard-container {
   width: 23%;
-  margin: 2% 1%;
+  margin: 0.5rem;
 }
 
 @media (max-width: 1000px) {
@@ -51,7 +60,7 @@ li {
     padding: 1%;
   }
   .minicard-container {
-    width: 48%;
+    width: 45%;
   }
 }
 @media (max-width: 600px) {
