@@ -7,7 +7,7 @@ const Refine = () => {
   const ctx = useContext(CountriesContext);
   const [showRegions, setShowRegions] = useState(false);
 
-  const refineSearchHandler = () => {
+  const refineSearchHandler = (e) => {
     if (e.target.value.length > 0) {
       ctx.setFilteredCountries(
         ctx.countries.filter((country) =>
