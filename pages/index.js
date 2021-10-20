@@ -6,7 +6,6 @@ import { useContext, useEffect, Fragment } from 'react';
 import Link from 'next/link';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useState } from 'react/cjs/react.development';
-import { faLessThanEqual } from '@fortawesome/free-solid-svg-icons';
 
 export async function getStaticProps() {
   const response = await fetch('https://restcountries.com/v3.1/all');
