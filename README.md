@@ -1,30 +1,21 @@
-
-
-
 # Frontend Mentor - REST Countries API with color theme switcher solution
 
 Hi! Thanks for checking out this repository.
 
-This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). 
+This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca).
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+- [The challenge](#the-challenge)
+- [Screenshot](#screenshot)
+- [Links](#links)
+- [Built with](#built-with)
+- [What I learned](#what-i-learned)
+- [Some code snippets I am pretty proud of](#some-code-snippets-i-am-pretty-proud-of)
+- [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
-
-## Overview
-
-### The challenge
+## The challenge
 
 Users should be able to:
 
@@ -33,20 +24,20 @@ Users should be able to:
 - Filter countries by region
 - Click on a country to see more detailed information on a separate page
 - Click through to the border countries on the detail page
-- Toggle the color scheme between light and dark mode *(optional)*
+- Toggle the color scheme between light and dark mode _(optional)_
 
-### Screenshot
+## Screenshot
 
-![](./screenshot.jpg)
+![](./screen01.png)
+![](./screen03.png)
+![](./screen02.png)
 
-### Links
+## Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/nextjsrestcountriesapi-zdnrmSvzL](https://www.frontendmentor.io/solutions/nextjsrestcountriesapi-zdnrmSvzL)
 - Live Site URL: [https://nextjs-rest-countries-api.vercel.app/](https://nextjs-rest-countries-api.vercel.app/)
 
-## My process
-
-### Built with
+## Built with
 
 - Semantic HTML5 markup
 - Flexbox
@@ -55,34 +46,36 @@ Users should be able to:
 - [React Ionicons](https://www.npmjs.com/package/react-ionicons)
 - [React infinite scroll component](https://www.npmjs.com/package/react-infinite-scroll-component)
 
+## What I learned
 
-### What I learned
+The "advanced" challenges provided by Frontend Mentor can get really challenging: still, I enjoyed working on it as it helped me consolidate once again my knowledge of NextJS and dynamic routing.
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I also decided to give styled components' `ThemeProvider` a try - what a powerful tool!
 
-To see how you can add code snippets, see below:
+I was also surprised to see how easy it is to implement infinite scrolling with the `react-infinite-scrolling-component`.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+## Some code snippets I am pretty proud of
+
+The REST Countries API is fast, free and pretty intuitive to use.
+
+Still, it gives back so much information that it can sometimes get a bit messy to figure out how exactly to extract what you need.
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+<div>
+  {country.borders && (
+    <span>
+      Border Countries:
+      {Object.values(country.borders).map((border) => (
+        <Link href={`/${border}`} key={border} passHref>
+          <span className='border'>{` ${border} `}</span>
+        </Link>
+      ))}
+    </span>
+  )}
+</div>
 ```
 
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
+## Useful resources
 
 - [How to use Themes in styled-components](https://dev.to/aromanarguello/how-to-use-themes-in-styled-components-49h)
 
