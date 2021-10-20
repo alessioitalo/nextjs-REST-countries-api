@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
-const StyledMiniCard = styled.div`
-  background: ${(props) => props.theme.element};
+const StyledMiniCard = styled.div.attrs(props=> ({
+  background: props.theme.background
+}))`
   width: 100%;
   height: 25rem;
   cursor: pointer;
@@ -26,7 +27,7 @@ const StyledMiniCard = styled.div`
   .flag {
     width: 100%;
     height: 50%;
-    background-image: url(${(props) => props.flag});
+    background: yellow;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
