@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 
 export const lightTheme = {
-  background: 'hsl(0, 0%, 98%)',
+  background: 'hsl(0, 0%, 88%)',
   text: 'hsl(200, 15%, 8%)',
   element: 'hsl(0, 0%, 100%)',
 };

@@ -1,41 +1,62 @@
 import StyledRefine from './styled-components/StyledRefine';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { CountriesContext } from '../store';
-import { Search } from 'react-ionicons';
-
+import { Search, ChevronDown } from 'react-ionicons';
 
 const Refine = () => {
   const ctx = useContext(CountriesContext);
+  const [showRegions, setShowRegions] = useState(false);
 
-  const refineSearchHandler = (e) => {
+  const refineSearchHandler = () => {
     if (e.target.value.length > 0) {
       ctx.setFilteredCountries(
         ctx.countries.filter((country) =>
-          country.name.common.toLowerCase().includes(e.target.value.toLowerCase())
+          country.name.common
+            .toLowerCase()
+            .includes(e.target.value.toLowerCase())
         )
       );
       return;
     }
     ctx.setFilteredCountries(ctx.countries);
   };
+
+  const filterSearchHandler = () => {};
+
   return (
     <StyledRefine>
-        <div className='search'>
-        <Search color={ctx.currentTheme === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'} />
-        <input 
-        placeholder="Search for a country..."
+      <div className='search'>
+        <Search
+          color={
+            ctx.currentTheme === 'dark'
+              ? 'hsl(0, 0%, 100%)'
+              : 'hsl(200, 15%, 8%)'
+          }
+        />
+        <input
+          placeholder='Search for a country...'
           onChange={refineSearchHandler}
         ></input>
-        </div>
-      {/* <form className='filter'>
-        <select>
-          <option>Africa</option>
-          <option>America</option>
-          <option>Asia</option>
-          <option>Europe</option>
-          <option>Oceania</option>
-        </select>
-      </form> */}
+      </div>
+      <div className='filter' onClick={() => setShowRegions(!showRegions)}>
+        {showRegions && (
+          <ul className='regions'>
+            <li>Africa</li>
+            <li>America</li>
+            <li>Asia</li>
+            <li>Europe</li>
+            <li>Oceania</li>
+          </ul>
+        )}
+        Filter By region{' '}
+        <ChevronDown
+          color={
+            ctx.currentTheme === 'dark'
+              ? 'hsl(0, 0%, 100%)'
+              : 'hsl(200, 15%, 8%)'
+          }
+        />
+      </div>
     </StyledRefine>
   );
 };

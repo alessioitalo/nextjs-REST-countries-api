@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const StyledMiniCard = styled.div`
   width: 100%;
-  height: 20rem;
+  height: 24rem;
   cursor: pointer;
   background: ${(props) => props.theme.element};
 
