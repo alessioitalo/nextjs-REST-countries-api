@@ -32,6 +32,7 @@ const StyledDetailCard = styled.div`
   }
 
   .info {
+    padding: 1rem 0;
     display: flex;
     width: 100%;
     justify-content: space-between;
