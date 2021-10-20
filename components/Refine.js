@@ -21,7 +21,11 @@ const Refine = () => {
     ctx.setFilteredCountries(ctx.countries);
   };
 
-  const filterSearchHandler = () => {};
+  const filterSearchHandler = (region) => {
+    ctx.setFilteredCountries(
+      ctx.countries.filter((country) => country.region === region)
+    );
+  };
 
   return (
     <StyledRefine>
@@ -41,11 +45,11 @@ const Refine = () => {
       <div className='filter' onClick={() => setShowRegions(!showRegions)}>
         {showRegions && (
           <ul className='regions'>
-            <li>Africa</li>
-            <li>America</li>
-            <li>Asia</li>
-            <li>Europe</li>
-            <li>Oceania</li>
+            <li onClick={() => filterSearchHandler('Africa')}>Africa</li>
+            <li onClick={() => filterSearchHandler('Americas')}>America</li>
+            <li onClick={() => filterSearchHandler('Asia')}>Asia</li>
+            <li onClick={() => filterSearchHandler('Europe')}>Europe</li>
+            <li onClick={() => filterSearchHandler('Oceania')}>Oceania</li>
           </ul>
         )}
         Filter By region{' '}

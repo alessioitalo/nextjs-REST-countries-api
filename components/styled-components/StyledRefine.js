@@ -12,7 +12,6 @@ const StyledRefine = styled.div`
     border-radius: 10px;
     background: ${(props) => props.theme.element};
     font-size: 0.8rem;
-
   }
 
   .search,
@@ -50,8 +49,6 @@ const StyledRefine = styled.div`
       background: ${(props) => props.theme.background};
     }
   }
-
-
 
   input {
     background: ${(props) => props.theme.element};
