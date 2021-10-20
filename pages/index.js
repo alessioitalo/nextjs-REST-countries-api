@@ -5,7 +5,7 @@ import MiniCard from '../components/MiniCard';
 import { useContext, useEffect, Fragment } from 'react';
 import Link from 'next/link';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 
 export async function getStaticProps() {
   const response = await fetch('https://restcountries.com/v3.1/all');
@@ -16,12 +16,12 @@ export async function getStaticProps() {
 }
 
 export default function Home({ countries }) {
+  const [slice, setSlice] = useState(20);
+
   useEffect(() => {
     ctx.setCountries(countries);
     ctx.setFilteredCountries(countries);
   }, []);
-
-  const [slice, setSlice] = useState(20);
 
   const showMore = () => {
     setSlice((prevSlice) => prevSlice + 20);

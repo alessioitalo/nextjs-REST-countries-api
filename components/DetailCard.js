@@ -59,7 +59,7 @@ const DetailCard = ({ country }) => {
               <span>
                 Border Countries:
                 {Object.values(country.borders).map((border) => (
-                  <Link href={`/${border}`} key={border}>
+                  <Link href={`/${border}`} key={border} passHref>
                     <span className='border'>{` ${border} `}</span>
                   </Link>
                 ))}
