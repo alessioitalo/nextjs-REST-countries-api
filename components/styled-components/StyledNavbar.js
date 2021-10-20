@@ -43,7 +43,7 @@ const StyledNavbar = styled.nav`
     }
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 600px) {
     font-size: 0.6rem;
   }
 `;

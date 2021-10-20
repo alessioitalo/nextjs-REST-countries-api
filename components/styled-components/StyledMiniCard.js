@@ -33,9 +33,12 @@ const StyledMiniCard = styled.div.attrs((props) => ({
     background-position: center;
   }
 
-  @media (max-width: 700px) {
-    .flag {
-      height: 30%;
+  @media (max-width: 600px) {
+
+    font-size: 0.9rem;
+    
+    .name{
+      font-size: 1.2rem;
     }
   }
 `;

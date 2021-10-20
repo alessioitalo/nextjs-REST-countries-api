@@ -10,7 +10,6 @@ const StyledDetailCard = styled.div`
   align-items: center;
   justify-content: space-around;
 
-
   .name {
     font-size: 2rem;
     font-weight: 800;
@@ -26,9 +25,9 @@ const StyledDetailCard = styled.div`
   }
 
   svg {
-      position: relative;
-      top: 2px;
-      margin-right: 10px;
+    position: relative;
+    top: 2px;
+    margin-right: 10px;
   }
 
   .info {
@@ -63,7 +62,7 @@ const StyledDetailCard = styled.div`
     font-weight: 800;
   }
 
-  .border{
+  .border {
     font-weight: 400;
     background: ${(props) => props.theme.element};
     padding: 0 1rem;
@@ -71,38 +70,37 @@ const StyledDetailCard = styled.div`
     cursor: pointer;
   }
 
-  @media(max-width:1000px){
+  @media (max-width: 1000px) {
     font-size: 0.8rem;
 
-    .info{
+    .info {
       flex-direction: column;
     }
 
-    .back{
+    .back {
       margin: 1rem 0;
       font-size: 0.8rem;
       padding: 0.5rem;
     }
 
-
-    .flag, .details{
+    .flag,
+    .details {
       margin: 1rem 0;
       width: 100%;
-
     }
 
-    .flag{
+    .flag {
       min-height: 50vw;
     }
-    
-    .details div{
-      flex-direction: column;
-  }
-  
-  svg{
-    top: 0;
-  }
 
+    .details div {
+      flex-direction: column;
+    }
+
+    svg {
+      top: 0;
+    }
+  }
 `;
 
 export default StyledDetailCard;

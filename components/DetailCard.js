@@ -12,7 +12,7 @@ const DetailCard = ({ country }) => {
   return (
     <StyledDetailCard flag={country.flags.svg}>
       <span className='back'>
-        <ArrowBack color={ctx.currentTheme === 'dark' && 'hsl(0, 0%, 100%)'} />
+        <ArrowBack color={ctx.currentTheme === 'dark' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'}/>
         <Link href='/'>Back</Link>
       </span>
       <div className='info'>
